@@ -4,7 +4,7 @@ import path from "node:path";
 import sharp from "sharp";
 
 const IMAGES_DIR = path.resolve("public/images");
-const BACKUP_DIR = path.resolve("public/images-original");
+const BACKUP_DIR = path.resolve("images-original");
 const CATEGORIES = ["bathroom", "kitchen", "laundry", "logo", "team"];
 
 async function listJpgs(dir) {
@@ -44,7 +44,7 @@ async function main() {
   for (const category of CATEGORIES) {
     await processCategory(category);
   }
-  console.log("Done. Originals preserved under public/images-original/.");
+  console.log("Done. Originals preserved under images-original/.");
 }
 
 main().catch((err) => {
