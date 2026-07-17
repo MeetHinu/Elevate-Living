@@ -1563,6 +1563,8 @@ git commit -m "feat: add photo assets and corrected About hero image"
 **Files:**
 - Create: `elevate-living/scripts/sharpen-images.js`
 
+> **Note (added during Task 14, commit `da32ffd`):** this task's steps below describe backups living under `public/images-original/`, matching what was actually implemented and committed in Task 13 (`87ae6bf`). Task 14 then relocated that directory to a top-level `images-original/` (outside `public/`), because anything under `public/` gets copied into the deployed `dist/` output — the backups were being shipped to production for no reason. `scripts/sharpen-images.js`'s `BACKUP_DIR` now resolves to `"images-original"`, not `"public/images-original"`. The steps below are left as originally written for historical accuracy; treat every `public/images-original/` reference in this section as superseded by that later fix.
+
 - [ ] **Step 1: Write `scripts/sharpen-images.js`**
 
 Backs up every original file under `public/images-original/` before overwriting anything in `public/images/`, so a bad sharpening pass is always recoverable. Uses `sharp`'s unsharp-mask (`sharpen`) plus a mild `linear` contrast boost — no upscaling, since that would require an AI model the user declined to pay for.
