@@ -1,12 +1,17 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import PageHero from "../components/PageHero.jsx";
 import { encodeForm } from "../lib/encodeForm.js";
 
-const initialState = { name: "", email: "", phone: "", project: "Kitchen", message: "" };
+const initialState = { name: "", email: "", phone: "", project: "Kitchen", message: "", "bot-field": "" };
 
 export default function Contact() {
   const [status, setStatus] = useState("idle");
   const [form, setForm] = useState(initialState);
+  const resetTimeoutRef = useRef(null);
+
+  useEffect(() => {
+    return () => clearTimeout(resetTimeoutRef.current);
+  }, []);
 
   const handleChange = (event) => {
     setForm({ ...form, [event.target.name]: event.target.value });
@@ -14,15 +19,17 @@ export default function Contact() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    clearTimeout(resetTimeoutRef.current);
     setStatus("sending");
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encodeForm({ "form-name": "consultation-request", ...form }),
     })
-      .then(() => {
+      .then((response) => {
+        if (!response.ok) throw new Error(`Form submission failed: ${response.status}`);
         setStatus("sent");
-        setTimeout(() => {
+        resetTimeoutRef.current = setTimeout(() => {
           setStatus("idle");
           setForm(initialState);
         }, 3000);
@@ -52,29 +59,59 @@ export default function Contact() {
               <input type="hidden" name="form-name" value="consultation-request" />
               <p style={{ display: "none" }}>
                 <label>
-                  Don't fill this out if you're human: <input name="bot-field" />
+                  Don't fill this out if you're human:{" "}
+                  <input name="bot-field" value={form["bot-field"]} onChange={handleChange} />
                 </label>
               </p>
 
               <div className="form-row">
                 <div>
                   <label htmlFor="name">Full Name</label>
-                  <input type="text" id="name" name="name" value={form.name} onChange={handleChange} required />
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={form.name}
+                    onChange={handleChange}
+                    disabled={status === "sending" || status === "sent"}
+                    required
+                  />
                 </div>
                 <div>
                   <label htmlFor="email">Email</label>
-                  <input type="email" id="email" name="email" value={form.email} onChange={handleChange} required />
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    disabled={status === "sending" || status === "sent"}
+                    required
+                  />
                 </div>
               </div>
 
               <div className="form-row">
                 <div>
                   <label htmlFor="phone">Phone</label>
-                  <input type="tel" id="phone" name="phone" value={form.phone} onChange={handleChange} />
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={form.phone}
+                    onChange={handleChange}
+                    disabled={status === "sending" || status === "sent"}
+                  />
                 </div>
                 <div>
                   <label htmlFor="project">Project Type</label>
-                  <select id="project" name="project" value={form.project} onChange={handleChange}>
+                  <select
+                    id="project"
+                    name="project"
+                    value={form.project}
+                    onChange={handleChange}
+                    disabled={status === "sending" || status === "sent"}
+                  >
                     <option>Kitchen</option>
                     <option>Bathroom</option>
                     <option>Laundry</option>
@@ -92,16 +129,22 @@ export default function Contact() {
                   name="message"
                   value={form.message}
                   onChange={handleChange}
+                  disabled={status === "sending" || status === "sent"}
                   placeholder="Room size, current condition, timeline, anything else that helps us prepare."
                 />
               </div>
 
               <div>
-                <button type="submit" className="btn btn-primary" disabled={status === "sending" || status === "sent"}>
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  aria-live="polite"
+                  disabled={status === "sending" || status === "sent"}
+                >
                   {status === "sending" ? "Sending…" : status === "sent" ? "Request sent" : "Request Consultation"}
                 </button>
                 {status === "error" && (
-                  <p style={{ marginTop: 12, fontSize: 13, color: "#a94442" }}>
+                  <p role="alert" style={{ marginTop: 12, fontSize: 13, color: "#a94442" }}>
                     Something went wrong — please email us directly at{" "}
                     <a href="mailto:info@elevateliving.com.au">info@elevateliving.com.au</a>.
                   </p>
