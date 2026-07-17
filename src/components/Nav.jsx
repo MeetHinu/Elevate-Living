@@ -20,7 +20,7 @@ export default function Nav() {
           <NavLink to="/contact" className={linkClass} onClick={close}>Contact</NavLink>
           <Link to="/contact" className="nav-cta" onClick={close}>Book a Consultation</Link>
         </div>
-        <button className="nav-toggle" aria-label="Toggle menu" onClick={() => setOpen((v) => !v)}>
+        <button className="nav-toggle" aria-label="Toggle menu" aria-expanded={open} onClick={() => setOpen((v) => !v)}>
           {open ? "✕" : "☰"}
         </button>
       </div>
