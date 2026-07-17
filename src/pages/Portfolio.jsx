@@ -25,6 +25,7 @@ export default function Portfolio() {
               <button
                 key={tab.key}
                 className={`filter-btn${activeFilter === tab.key ? " active-filter" : ""}`}
+                aria-pressed={activeFilter === tab.key}
                 onClick={() => setActiveFilter(tab.key)}
               >
                 {tab.label}
