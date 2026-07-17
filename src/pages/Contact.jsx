@@ -138,11 +138,16 @@ export default function Contact() {
                 <button
                   type="submit"
                   className="btn btn-primary"
-                  aria-live="polite"
                   disabled={status === "sending" || status === "sent"}
                 >
                   {status === "sending" ? "Sending…" : status === "sent" ? "Request sent" : "Request Consultation"}
                 </button>
+                <p
+                  aria-live="polite"
+                  style={{ position: "absolute", width: 1, height: 1, overflow: "hidden", clip: "rect(0 0 0 0)" }}
+                >
+                  {status === "sending" ? "Sending your request…" : status === "sent" ? "Request sent." : ""}
+                </p>
                 {status === "error" && (
                   <p role="alert" style={{ marginTop: 12, fontSize: 13, color: "#a94442" }}>
                     Something went wrong — please email us directly at{" "}
