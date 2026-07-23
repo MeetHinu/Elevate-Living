@@ -21,6 +21,11 @@ export const portfolioItems = [
   { id: "laundry-2", category: "laundry", tag: "Laundry", title: "Terrazzo Butler’s Laundry", desc: "Terrazzo tile and warm oak joinery", img: "/images/laundry/laundry-2.jpg" },
   { id: "laundry-3", category: "laundry", tag: "Laundry", title: "Marble Laundry Counter", desc: "Brushed brass fittings, honed marble benchtop", img: "/images/laundry/laundry-3.jpg" },
   { id: "laundry-4", category: "laundry", tag: "Laundry", title: "Oak Laundry Suite", desc: "Open shelving and a brass tap over dual appliances", img: "/images/laundry/laundry-4.jpg" },
+  { id: "living-1", category: "living", tag: "Living", title: "Coffered Living Room", desc: "Marble fireplace framed by custom built-ins", img: "/images/living/living-1.jpg" },
+  { id: "living-2", category: "living", tag: "Living", title: "Bar Cart Lounge", desc: "Sectional seating with a vintage bar cart", img: "/images/living/living-2.jpg" },
+  { id: "living-3", category: "living", tag: "Living", title: "Slatted Wood Lounge", desc: "Concrete walls and timber slats with warm accents", img: "/images/living/living-3.jpg" },
+  { id: "living-4", category: "living", tag: "Living", title: "Neutral Sectional Lounge", desc: "Stone nesting tables beneath a woven pendant", img: "/images/living/living-4.jpg" },
+  { id: "living-5", category: "living", tag: "Living", title: "City View Living Room", desc: "Floor-to-ceiling glass framing the evening skyline", img: "/images/living/living-5.jpg" },
 ];
 
 export function filterPortfolio(items, key) {

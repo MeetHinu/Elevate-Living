@@ -5,7 +5,7 @@ import sharp from "sharp";
 
 const IMAGES_DIR = path.resolve("public/images");
 const BACKUP_DIR = path.resolve("images-original");
-const CATEGORIES = ["bathroom", "kitchen", "laundry", "logo", "team"];
+const CATEGORIES = ["bathroom", "kitchen", "laundry", "living", "logo", "team"];
 
 async function listJpgs(dir) {
   const entries = await readdir(dir);
