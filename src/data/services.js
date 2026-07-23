@@ -19,7 +19,7 @@ export const services = [
   },
   {
     title: "Living Spaces",
-    img: "/images/kitchen/kitchen-5.jpg",
+    img: "/images/living/living-1.jpg",
     text: "Living and dining areas planned around how you actually live day to day.",
     items: ["Furniture Layout", "Lighting Plans", "Material & Colour Palettes", "Styling & Sourcing"],
   },
