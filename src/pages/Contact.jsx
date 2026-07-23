@@ -40,7 +40,7 @@ export default function Contact() {
   return (
     <>
       <PageHero
-        image="/images/living/living-3.jpg"
+        image="/images/living/living-6.jpg"
         alt="Contact Elevate Living Design"
         eyebrow="Contact"
         title="Tell us about your space."
