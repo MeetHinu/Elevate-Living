@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <header className="photo-hero">
-        <img src="/images/kitchen/kitchen-3.jpg" alt="Elevate Living Design project" />
+        <img src="/images/kitchen/kitchen-6.jpg" alt="Elevate Living Design project" />
         <div className="photo-hero-content">
           <blockquote>
             “Good design should feel like it always belonged — considered in every room, from the kitchen to the laundry.”
