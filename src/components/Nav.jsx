@@ -10,7 +10,7 @@ export default function Nav() {
     <nav className="site-nav">
       <div className="wrap">
         <Link to="/" className="logo-mark" onClick={close}>
-          <img src="/images/logo/logo.jpg" alt="Elevate Living Interior Design Studio" />
+          <img src="/images/logo/logo.png" alt="Elevate Living Interior Design Studio" />
         </Link>
         <div className={`nav-links${open ? " open" : ""}`}>
           <NavLink to="/" className={linkClass} onClick={close} end>Home</NavLink>

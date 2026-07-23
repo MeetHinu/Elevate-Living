@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="wrap">
         <div className="footer-top">
           <div className="footer-logo-mark">
-            <img src="/images/logo/logo.jpg" alt="Elevate Living Interior Design Studio" />
+            <img src="/images/logo/logo.png" alt="Elevate Living Interior Design Studio" />
             <p style={{ marginTop: 14, maxWidth: 280 }}>
               Full-service interior design for kitchens, bathrooms, laundries and living spaces.
             </p>
