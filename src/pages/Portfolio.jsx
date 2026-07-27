@@ -15,7 +15,7 @@ export default function Portfolio() {
         alt="Elevate Living Design portfolio"
         eyebrow="Portfolio"
         title="Rooms we've brought to life."
-        description="Kitchens, bathrooms, laundries and living spaces — each one designed and overseen from first sketch to final styling."
+        description="Kitchens, bathrooms, laundries and living spaces, each one designed and overseen from first sketch to final styling."
       />
 
       <section className="section-cream">
@@ -40,7 +40,7 @@ export default function Portfolio() {
             </div>
           ) : (
             <p style={{ color: "var(--text-ink-dim)" }}>
-              Photos for this category are on the way — check back soon, or get in touch to see recent work directly.
+              Photos for this category are on the way. Check back soon, or get in touch to see recent work directly.
             </p>
           )}
         </div>

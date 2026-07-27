@@ -13,7 +13,7 @@ export default function Services() {
         alt="Elevate Living Design services"
         eyebrow="Services"
         title="Every room, considered."
-        description="From kitchens and bathrooms to laundries and living spaces — one studio, covered end to end."
+        description="From kitchens and bathrooms to laundries and living spaces: one studio, covered end to end."
       />
 
       <section className="section-cream">

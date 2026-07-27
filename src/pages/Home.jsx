@@ -12,7 +12,7 @@ export default function Home() {
         <img src="/images/kitchen/kitchen-6.jpg" alt="Elevate Living Design project" />
         <div className="photo-hero-content">
           <blockquote>
-            “Good design should feel like it always belonged — considered in every room, from the kitchen to the laundry.”
+            “Good design should feel like it always belonged, considered in every room, from the kitchen to the laundry.”
           </blockquote>
           <div className="hero-actions">
             <Link to="/contact" className="btn btn-primary">Book a Consultation</Link>
@@ -54,7 +54,7 @@ export default function Home() {
             <p className="eyebrow">What We Do</p>
             <h2 style={{ fontSize: 34, marginTop: 14 }}>Full-service interior design</h2>
             <p style={{ marginTop: 16, color: "var(--text-ink-dim)" }}>
-              We design every room in the home — kitchens, bathrooms, laundries and living spaces — planned as
+              We design every room in the home (kitchens, bathrooms, laundries and living spaces) planned as
               one cohesive material story from concept through to build oversight and final styling.
             </p>
             <div style={{ marginTop: 28 }}>
@@ -82,7 +82,7 @@ export default function Home() {
             </p>
             <p style={{ marginTop: 18, color: "var(--text-ink-dim)" }}>
               Elevate Living was founded on the belief that every room in a home deserves the same level of
-              care — not just the ones guests see. From kitchens and bathrooms to laundries and living
+              care, not just the ones guests see. From kitchens and bathrooms to laundries and living
               spaces, each project is guided from first concept through to the final styled reveal.
             </p>
             <div style={{ marginTop: 28 }}>
@@ -97,7 +97,7 @@ export default function Home() {
 
       <CtaBand
         title="Start with a conversation."
-        subtitle="Tell us about your space — we'll take it from there."
+        subtitle="Tell us about your space. We'll take it from there."
       />
     </>
   );
