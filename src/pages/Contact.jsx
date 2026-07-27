@@ -42,7 +42,6 @@ export default function Contact() {
       <PageHero
         image="/images/living/living-6.jpg"
         alt="Contact Elevate Living Design"
-        eyebrow="Contact"
         title="Tell us about your space."
         description="Fill in a few details and we'll get back to you within two business days to arrange a consultation."
       />
@@ -150,8 +149,8 @@ export default function Contact() {
                 </p>
                 {status === "error" && (
                   <p role="alert" style={{ marginTop: 12, fontSize: 13, color: "#a94442" }}>
-                    Something went wrong — please email us directly at{" "}
-                    <a href="mailto:info@elevateliving.com.au">info@elevateliving.com.au</a>.
+                    Something went wrong. Please email us directly at{" "}
+                    <a href="mailto:info@elevatelivingstudio.com.au">info@elevatelivingstudio.com.au</a>.
                   </p>
                 )}
               </div>
@@ -164,19 +163,12 @@ export default function Contact() {
       </section>
 
       <section className="section-alt">
-        <div className="wrap grid-3">
-          <div>
-            <p className="eyebrow">Studio</p>
-            <h3 style={{ fontSize: 20, marginTop: 10 }}>Visit Us</h3>
-            <p style={{ marginTop: 10, color: "var(--text-ink-dim)", fontSize: 14 }}>
-              123 Gertrude Street<br />Fitzroy VIC 3065<br />Australia
-            </p>
-          </div>
+        <div className="wrap grid-2">
           <div>
             <p className="eyebrow">Reach Out</p>
             <h3 style={{ fontSize: 20, marginTop: 10 }}>Get in Touch</h3>
             <p style={{ marginTop: 10, color: "var(--text-ink-dim)", fontSize: 14 }}>
-              <a href="mailto:info@elevateliving.com.au">info@elevateliving.com.au</a>
+              <a href="mailto:info@elevatelivingstudio.com.au">info@elevatelivingstudio.com.au</a>
               <br />
               <a href="tel:+61402601808">0402601808</a>
             </p>

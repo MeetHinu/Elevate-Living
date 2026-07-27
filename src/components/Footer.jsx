@@ -22,10 +22,29 @@ export default function Footer() {
             </div>
             <div className="footer-col">
               <h5>Studio</h5>
-              <p>123 Gertrude Street<br />Fitzroy VIC 3065</p>
-              <a href="mailto:info@elevateliving.com.au">info@elevateliving.com.au</a>
+              <a href="mailto:info@elevatelivingstudio.com.au">info@elevatelivingstudio.com.au</a>
               <a href="tel:+61402601808">0402601808</a>
-              <a href="https://instagram.com/elevateliving.design" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://instagram.com/elevateliving.design"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: "inline-flex", alignItems: "center", gap: 8 }}
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
                 @elevateliving.design
               </a>
             </div>

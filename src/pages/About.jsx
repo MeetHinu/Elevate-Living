@@ -5,11 +5,10 @@ export default function About() {
   return (
     <>
       <PageHero
-        image="/images/kitchen/kitchen-4.jpg"
+        image="/images/living/living-7.jpg"
         alt="Elevate Living Design studio"
-        eyebrow="About"
         title="A studio for the whole home."
-        description="Every room deserves the same level of care — from the kitchen to the laundry."
+        description="Every room deserves the same level of care, from the kitchen to the laundry."
       />
 
       <section className="section-cream">
@@ -22,7 +21,7 @@ export default function About() {
             <p style={{ color: "var(--text-ink-dim)" }}>
               Elevate Living was founded on a simple idea: a home is only as good as its least-considered
               room. We design kitchens, bathrooms, laundries and living spaces with the same attention to
-              detail — the same care in material choice, lighting, and daily function — so nothing in the
+              detail, the same care in material choice, lighting, and daily function, so nothing in the
               home feels like an afterthought.
             </p>
             <p style={{ color: "var(--text-ink-dim)", marginTop: 18 }}>
@@ -79,7 +78,7 @@ export default function About() {
 
       <CtaBand
         title="Let's talk about your home."
-        subtitle="We take on a limited number of projects each year — get in touch to check availability."
+        subtitle="We take on a limited number of projects each year. Get in touch to check availability."
       />
     </>
   );

@@ -30,7 +30,7 @@ The contact form posts to Netlify Forms (form name `consultation-request`). To r
 
 1. Netlify dashboard → your site → **Forms**.
 2. Confirm submissions are appearing under the `consultation-request` form (test by submitting the live contact page once it's deployed).
-3. **Forms → Form notifications → Add notification → Email notification**, set the address to `info@elevateliving.com.au`.
+3. **Forms → Form notifications → Add notification → Email notification**, set the address to `info@elevatelivingstudio.com.au`.
 
 ### Re-running the image sharpening pass
 
