@@ -171,7 +171,7 @@ section { padding: 100px 0; }
   content: "";
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
-  background: linear-gradient(0deg, #14110db8, #14110d33 45%, #14110d0d 70%);
+  background: linear-gradient(0deg, #14110dd9, #14110da6 45%, #14110d40 70%, #14110d00 100%);
 }
 .photo-hero-content {
   position: relative;
@@ -216,7 +216,7 @@ section { padding: 100px 0; }
   content: "";
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
-  background: linear-gradient(0deg, #14110dad, #14110d1a 60%);
+  background: linear-gradient(0deg, #14110dd9, #14110da6 50%, #14110d40 80%, #14110d00 100%);
 }
 .page-hero-content {
   position: relative;
