@@ -40,7 +40,7 @@ export default function Contact() {
   return (
     <>
       <PageHero
-        image="/images/living/living-6.jpg"
+        image="/images/living/living-3.jpg"
         alt="Contact Elevate Living Design"
         title="Tell us about your space."
         description="Fill in a few details and we'll get back to you within two business days to arrange a consultation."
