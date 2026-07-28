@@ -293,6 +293,22 @@ section { padding: 100px 0; }
 .service-block ul { margin: 18px 0 0; padding: 0; list-style: none; }
 .service-block li { padding: 10px 0; border-top: 1px solid var(--line); font-size: 14px; color: var(--text-ink-dim); }
 
+/* Testimonials */
+.testimonial-card {
+  padding: 28px;
+  border: 1px dashed var(--line);
+  background: var(--bg-white);
+}
+.testimonial-quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--text-ink);
+}
+.testimonial-name { margin-top: 18px; font-size: 14px; font-weight: 600; }
+.testimonial-detail { margin-top: 2px; font-size: 13px; color: var(--text-ink-dim); }
+
 /* Process */
 .process-row { display: flex; gap: 28px; border-top: 1px solid var(--line); padding: 32px 0; }
 .process-row:last-child { border-bottom: 1px solid var(--line); }
