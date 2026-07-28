@@ -3,7 +3,17 @@ import PageHero from "../components/PageHero.jsx";
 import { encodeForm } from "../lib/encodeForm.js";
 import { isValidEmail, isValidAuMobile } from "../lib/validation.js";
 
-const initialState = { name: "", email: "", phone: "", project: "Kitchen", message: "", "bot-field": "" };
+const initialState = {
+  name: "",
+  email: "",
+  phone: "",
+  address: "",
+  project: "Kitchen",
+  timeline: "As soon as possible",
+  hearAbout: "Instagram",
+  message: "",
+  "bot-field": "",
+};
 
 export default function Contact() {
   const [status, setStatus] = useState("idle");
@@ -169,6 +179,53 @@ export default function Contact() {
                     <option>Living Space</option>
                     <option>Whole Home</option>
                     <option>Not Sure Yet</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="address">Project Address</label>
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  value={form.address}
+                  onChange={handleChange}
+                  disabled={status === "sending" || status === "sent"}
+                />
+              </div>
+
+              <div className="form-row">
+                <div>
+                  <label htmlFor="timeline">When are you hoping to begin?</label>
+                  <select
+                    id="timeline"
+                    name="timeline"
+                    value={form.timeline}
+                    onChange={handleChange}
+                    disabled={status === "sending" || status === "sent"}
+                  >
+                    <option>As soon as possible</option>
+                    <option>Within 3 months</option>
+                    <option>3–6 months</option>
+                    <option>6–12 months</option>
+                    <option>Just researching, no timeline yet</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="hearAbout">How did you hear about us?</label>
+                  <select
+                    id="hearAbout"
+                    name="hearAbout"
+                    value={form.hearAbout}
+                    onChange={handleChange}
+                    disabled={status === "sending" || status === "sent"}
+                  >
+                    <option>Instagram</option>
+                    <option>Google Search</option>
+                    <option>Referral from a friend or family member</option>
+                    <option>Referral from a builder or trade</option>
+                    <option>Other</option>
                   </select>
                 </div>
               </div>
