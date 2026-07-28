@@ -209,7 +209,7 @@ export default function Contact() {
             </form>
           </div>
           <div className="photo-card" style={{ aspectRatio: "auto", height: "100%", minHeight: 340 }}>
-            <img src="/images/bathroom/bathroom-2.jpg" alt="Elevate Living Design project" />
+            <img src="/images/living/living-6.jpg" alt="Elevate Living Design project" />
           </div>
         </div>
       </section>
