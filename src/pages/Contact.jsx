@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import PageHero from "../components/PageHero.jsx";
+import AddressAutocomplete from "../components/AddressAutocomplete.jsx";
 import { encodeForm } from "../lib/encodeForm.js";
 import { isValidEmail, isValidAuMobile } from "../lib/validation.js";
 
@@ -185,8 +186,7 @@ export default function Contact() {
 
               <div>
                 <label htmlFor="address">Project Address</label>
-                <input
-                  type="text"
+                <AddressAutocomplete
                   id="address"
                   name="address"
                   value={form.address}

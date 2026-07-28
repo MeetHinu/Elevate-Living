@@ -367,6 +367,42 @@ textarea { resize: vertical; min-height: 120px; }
   .form-row { grid-template-columns: 1fr; }
 }
 
+.address-suggestions {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 20;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  background: var(--bg-white);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  max-height: 220px;
+  overflow-y: auto;
+  box-shadow: 0 8px 24px rgba(35, 32, 27, .12);
+}
+.address-suggestions li { margin: 0; }
+.address-suggestions button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  border: 0;
+  background: none;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--text-ink);
+  cursor: pointer;
+  border-radius: 2px;
+}
+.address-suggestions button:hover,
+.address-suggestions button:focus {
+  background: var(--bg-cream-alt);
+  outline: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { transition: none !important; }
