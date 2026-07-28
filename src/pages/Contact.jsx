@@ -1,12 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import PageHero from "../components/PageHero.jsx";
 import { encodeForm } from "../lib/encodeForm.js";
+import { isValidEmail, isValidAuMobile } from "../lib/validation.js";
 
 const initialState = { name: "", email: "", phone: "", project: "Kitchen", message: "", "bot-field": "" };
 
 export default function Contact() {
   const [status, setStatus] = useState("idle");
   const [form, setForm] = useState(initialState);
+  const [errors, setErrors] = useState({});
   const resetTimeoutRef = useRef(null);
 
   useEffect(() => {
@@ -14,11 +16,32 @@ export default function Contact() {
   }, []);
 
   const handleChange = (event) => {
-    setForm({ ...form, [event.target.name]: event.target.value });
+    const { name, value } = event.target;
+    setForm({ ...form, [name]: value });
+    if (errors[name]) setErrors({ ...errors, [name]: "" });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    const nextErrors = {};
+    if (!form.name.trim()) {
+      nextErrors.name = "Please enter your name.";
+    }
+    if (!isValidEmail(form.email)) {
+      nextErrors.email = "Please enter a correct email address.";
+    }
+    if (!form.phone.trim()) {
+      nextErrors.phone = "Please enter your phone number.";
+    } else if (!isValidAuMobile(form.phone)) {
+      nextErrors.phone = "Please enter a correct Australian mobile number, e.g. 0412 345 678.";
+    }
+    if (Object.keys(nextErrors).length > 0) {
+      setErrors(nextErrors);
+      return;
+    }
+    setErrors({});
+
     clearTimeout(resetTimeoutRef.current);
     setStatus("sending");
     fetch("/", {
@@ -51,6 +74,7 @@ export default function Contact() {
           <div>
             <form
               onSubmit={handleSubmit}
+              noValidate
               name="consultation-request"
               data-netlify="true"
               netlify-honeypot="bot-field"
@@ -73,8 +97,15 @@ export default function Contact() {
                     value={form.name}
                     onChange={handleChange}
                     disabled={status === "sending" || status === "sent"}
+                    aria-invalid={!!errors.name}
+                    aria-describedby={errors.name ? "name-error" : undefined}
                     required
                   />
+                  {errors.name && (
+                    <p id="name-error" role="alert" style={{ marginTop: 8, fontSize: 13, color: "#a94442" }}>
+                      {errors.name}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label htmlFor="email">Email</label>
@@ -85,8 +116,15 @@ export default function Contact() {
                     value={form.email}
                     onChange={handleChange}
                     disabled={status === "sending" || status === "sent"}
+                    aria-invalid={!!errors.email}
+                    aria-describedby={errors.email ? "email-error" : undefined}
                     required
                   />
+                  {errors.email && (
+                    <p id="email-error" role="alert" style={{ marginTop: 8, fontSize: 13, color: "#a94442" }}>
+                      {errors.email}
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -100,7 +138,15 @@ export default function Contact() {
                     value={form.phone}
                     onChange={handleChange}
                     disabled={status === "sending" || status === "sent"}
+                    aria-invalid={!!errors.phone}
+                    aria-describedby={errors.phone ? "phone-error" : undefined}
+                    required
                   />
+                  {errors.phone && (
+                    <p id="phone-error" role="alert" style={{ marginTop: 8, fontSize: 13, color: "#a94442" }}>
+                      {errors.phone}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label htmlFor="project">Project Type</label>
