@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import PageHero from "../components/PageHero.jsx";
 import { encodeForm } from "../lib/encodeForm.js";
 import { isValidEmail, isValidAuMobile } from "../lib/validation.js";
-import Testimonials from "../components/Testimonials.jsx";
 import { useDocumentHead } from "../hooks/useDocumentHead.js";
 
 const initialState = { name: "", email: "", phone: "", project: "Kitchen", message: "", "bot-field": "" };
@@ -242,8 +241,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
-      <Testimonials background="cream" />
     </>
   );
 }

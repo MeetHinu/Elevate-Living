@@ -2,7 +2,6 @@ import { useState } from "react";
 import PageHero from "../components/PageHero.jsx";
 import PhotoCard from "../components/PhotoCard.jsx";
 import CtaBand from "../components/CtaBand.jsx";
-import Testimonials from "../components/Testimonials.jsx";
 import { filterTabs, portfolioItems, filterPortfolio } from "../data/portfolio.js";
 import { useDocumentHead } from "../hooks/useDocumentHead.js";
 
@@ -53,8 +52,6 @@ export default function Portfolio() {
           )}
         </div>
       </section>
-
-      <Testimonials />
 
       <CtaBand
         title="See something close to your vision?"
