@@ -89,7 +89,9 @@ export default function Contact() {
 
               <div className="form-row">
                 <div>
-                  <label htmlFor="name">Full Name</label>
+                  <label htmlFor="name">
+                    Full Name <span aria-hidden="true" style={{ color: "#a94442" }}>*</span>
+                  </label>
                   <input
                     type="text"
                     id="name"
@@ -108,7 +110,9 @@ export default function Contact() {
                   )}
                 </div>
                 <div>
-                  <label htmlFor="email">Email</label>
+                  <label htmlFor="email">
+                    Email <span aria-hidden="true" style={{ color: "#a94442" }}>*</span>
+                  </label>
                   <input
                     type="email"
                     id="email"
@@ -130,7 +134,9 @@ export default function Contact() {
 
               <div className="form-row">
                 <div>
-                  <label htmlFor="phone">Phone</label>
+                  <label htmlFor="phone">
+                    Phone <span aria-hidden="true" style={{ color: "#a94442" }}>*</span>
+                  </label>
                   <input
                     type="tel"
                     id="phone"
