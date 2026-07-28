@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { filterPortfolio, findPortfolioItem, portfolioItems } from "./portfolio.js";
+import { filterPortfolio, findPortfolioItem, findPortfolioItemOrNull, portfolioItems } from "./portfolio.js";
 
 describe("filterPortfolio", () => {
   it("returns all items when key is 'all'", () => {
@@ -30,5 +30,24 @@ describe("findPortfolioItem", () => {
 
   it("throws for an unknown id", () => {
     expect(() => findPortfolioItem("not-real")).toThrow('No portfolio item with id "not-real"');
+  });
+});
+
+describe("findPortfolioItemOrNull", () => {
+  it("returns the matching item by id", () => {
+    expect(findPortfolioItemOrNull("kitchen-2").title).toBe("Navy & Brass Island Kitchen");
+  });
+
+  it("returns null for an unknown id instead of throwing", () => {
+    expect(findPortfolioItemOrNull("not-real")).toBeNull();
+  });
+});
+
+describe("portfolioItems longDesc", () => {
+  it("every item has a non-empty longDesc distinct from its short desc", () => {
+    for (const item of portfolioItems) {
+      expect(item.longDesc).toBeTruthy();
+      expect(item.longDesc.length).toBeGreaterThan(item.desc.length);
+    }
   });
 });

@@ -236,6 +236,7 @@ section { padding: 100px 0; }
 
 /* Photo cards / teaser grid */
 .photo-card {
+  display: block;
   position: relative;
   overflow: hidden;
   background: var(--bg-cream-alt);
