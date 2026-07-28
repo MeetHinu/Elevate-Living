@@ -6,6 +6,8 @@ import sharp from "sharp";
 const IMAGES_DIR = path.resolve("public/images");
 const BACKUP_DIR = path.resolve("images-original");
 const CATEGORIES = ["bathroom", "kitchen", "laundry", "living", "logo", "team"];
+const MAX_WIDTH = 1920;
+const JPEG_QUALITY = 78;
 
 async function listJpgs(dir) {
   const entries = await readdir(dir);
@@ -28,9 +30,10 @@ async function processCategory(category) {
 
     const before = await stat(sourcePath);
     await sharp(backupPath)
+      .resize({ width: MAX_WIDTH, withoutEnlargement: true })
       .sharpen({ sigma: 1.2, m1: 1.0, m2: 2.0 })
       .linear(1.05, -8)
-      .jpeg({ quality: 90 })
+      .jpeg({ quality: JPEG_QUALITY })
       .toFile(sourcePath + ".tmp");
 
     const { rename } = await import("node:fs/promises");
