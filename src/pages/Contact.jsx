@@ -2,10 +2,17 @@ import { useEffect, useRef, useState } from "react";
 import PageHero from "../components/PageHero.jsx";
 import { encodeForm } from "../lib/encodeForm.js";
 import { isValidEmail, isValidAuMobile } from "../lib/validation.js";
+import { useDocumentHead } from "../hooks/useDocumentHead.js";
 
 const initialState = { name: "", email: "", phone: "", project: "Kitchen", message: "", "bot-field": "" };
 
 export default function Contact() {
+  useDocumentHead({
+    title: "Contact | Elevate Living Interior Design",
+    description:
+      "Book a consultation with Elevate Living, a Melbourne interior design studio for kitchens, bathrooms, laundries and living spaces.",
+  });
+
   const [status, setStatus] = useState("idle");
   const [form, setForm] = useState(initialState);
   const [errors, setErrors] = useState({});

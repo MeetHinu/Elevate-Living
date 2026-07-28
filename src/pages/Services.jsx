@@ -4,8 +4,15 @@ import ProcessRow from "../components/ProcessRow.jsx";
 import CtaBand from "../components/CtaBand.jsx";
 import { services } from "../data/services.js";
 import { processSteps } from "../data/process.js";
+import { useDocumentHead } from "../hooks/useDocumentHead.js";
 
 export default function Services() {
+  useDocumentHead({
+    title: "Services | Elevate Living Interior Design",
+    description:
+      "Full-service interior design for kitchens, bathrooms, laundries and living spaces, covered end to end by one Melbourne studio.",
+  });
+
   return (
     <>
       <PageHero

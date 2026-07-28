@@ -2,10 +2,17 @@ import { Link } from "react-router-dom";
 import CtaBand from "../components/CtaBand.jsx";
 import PhotoCard from "../components/PhotoCard.jsx";
 import { findPortfolioItem } from "../data/portfolio.js";
+import { useDocumentHead } from "../hooks/useDocumentHead.js";
 
 const teaserIds = ["kitchen-2", "bath-3", "laundry-2", "bath-5", "kitchen-4"];
 
 export default function Home() {
+  useDocumentHead({
+    title: "Elevate Living — Interior Design Studio | Melbourne",
+    description:
+      "Melbourne interior design studio for kitchens, bathrooms, laundries and living spaces, from concept through to final styling.",
+  });
+
   return (
     <>
       <header className="photo-hero">

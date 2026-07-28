@@ -1,7 +1,14 @@
 import PageHero from "../components/PageHero.jsx";
 import CtaBand from "../components/CtaBand.jsx";
+import { useDocumentHead } from "../hooks/useDocumentHead.js";
 
 export default function About() {
+  useDocumentHead({
+    title: "About | Elevate Living Interior Design",
+    description:
+      "Meet Hinal Dave, founder of Elevate Living, a Melbourne interior design studio designing every room with the same care.",
+  });
+
   return (
     <>
       <PageHero

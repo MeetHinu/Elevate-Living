@@ -3,8 +3,15 @@ import PageHero from "../components/PageHero.jsx";
 import PhotoCard from "../components/PhotoCard.jsx";
 import CtaBand from "../components/CtaBand.jsx";
 import { filterTabs, portfolioItems, filterPortfolio } from "../data/portfolio.js";
+import { useDocumentHead } from "../hooks/useDocumentHead.js";
 
 export default function Portfolio() {
+  useDocumentHead({
+    title: "Portfolio | Elevate Living Interior Design",
+    description:
+      "Browse completed kitchen, bathroom, laundry and living space projects by Elevate Living, a Melbourne interior design studio.",
+  });
+
   const [activeFilter, setActiveFilter] = useState("all");
   const visibleItems = filterPortfolio(portfolioItems, activeFilter);
 

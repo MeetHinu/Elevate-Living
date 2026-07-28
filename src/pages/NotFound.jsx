@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
+import { useDocumentHead } from "../hooks/useDocumentHead.js";
 
 export default function NotFound() {
+  useDocumentHead({
+    title: "Page Not Found | Elevate Living",
+    description: "The page you're looking for doesn't exist or may have moved.",
+  });
+
   return (
     <section className="section-cream">
       <div className="wrap" style={{ textAlign: "center", padding: "80px 0" }}>
